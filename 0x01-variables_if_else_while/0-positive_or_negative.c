@@ -1,29 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+/**
+ * main - Entry point
+ * Discription: 'check for number if it is positive or nigative'
+ * Return: always 0
+ */
 int main(void)
-{
-srand(time(0)); /* Seed the random number generator*/
-
-int n = rand() % 201 - 100; /* Generate a random number between -100 and 100*/
-
-printf("The number %d is ", n);
-
+{ int n;
+srand(time(0));
+n = rand() - RAND_MAX / 2;
 if (n > 0)
 {
-printf("positive");
+printf("%d is positive\n", n);
 }
-else if (n < 0)
+else if (n == 0)
 {
-printf("negative");
+printf("%d is zero\n", n);
 }
 else
 {
-printf("zero");
+printf("%d is negative\n", n);
 }
-
 printf("\n");
-
 return (0);
 }
