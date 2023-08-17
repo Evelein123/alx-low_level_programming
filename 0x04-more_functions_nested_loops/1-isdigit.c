@@ -1,15 +1,14 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * _isupper - checks if input is digit between 0 - 9
+ * _isdigit - checks if a character is a digit between 0 and 9
  *
- * @c: input
+ * @c: the character to be checked
  *
- * Return: 1 if is digit, 0 if not
+ * Return: 1 if the character is a digit, 0 otherwise
  */
 
-int _isdigit(int c);
+int _isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
