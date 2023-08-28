@@ -1,41 +1,47 @@
-#include <stddef.h>
 #include "main.h"
+#include <stddef.h>
 
 /**
  * _strstr - locates a substring
- * @haystack: pointer to the string
- * @needle: pointer to the substring
+ * @haystack: the string to be searched
+ * @needle: the substring to be found
  *
- * Return: a pointer to the beginning of the located substring
- * or NULL if not found
+ * Description: This function finds
+ * the first occurrence of the substring
+ * needle in the string haystack.
+ * The terminating null bytes (\0) are not
+ * compared. It returns a pointer to
+ * the beginning of the located substring,
+ * or NULL if the substring is not found.
+ *
+ * Return: a pointer to the substring, or NULL if not found
  */
+
 char *_strstr(char *haystack, char *needle)
 {
 	int i, j, k;
 	/* loop through the haystack string */
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		/* loop through the needle substring */
-		for (i = 0; haystack[i] != '\0'; i++)
+		/* check if the first character of needle matches */
+		if (haystack[i] == needle[0])
 		{
-			/* loop through the needle substring */
+			/* loop through the needle string */
 			for (j = 0, k = i; needle[j] != '\0'; j++, k++)
 			{
-				/* if the current character  does not match the current of needle */
-				if (haystack[k] != needle[j])
+				/* if any character does not match, break */
+				if (needle[j] != haystack[k])
 				{
-					/* break the inner loop and continue the outer loop */
 					break;
 				}
 			}
-			/* if the inner loop reached the end  means a match was found */
+			/* if the end of needle is reached, return the pointer */
 			if (needle[j] == '\0')
 			{
-				/* return the pointer of the located substring in haystack */
 				return (haystack + i);
 			}
 		}
-		/* if no match is found, return NULL */
-		return (NULL);
 	}
+	/* if no match is found, return NULL */
+	return (NULL);
 }
