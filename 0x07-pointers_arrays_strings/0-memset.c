@@ -1,4 +1,4 @@
-#inclide "main.h"
+#include "main.h"
 
 /**
  * *_memset - file memory with a constent tybe.
