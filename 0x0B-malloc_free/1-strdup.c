@@ -19,10 +19,11 @@
 
 char *_strdup(char *str)
 {
+	char *duplicate;
+
 	if (str == NULL)
 		return (NULL);
-	char *duplicate = malloc(strlen(str) + 1);
-
+	duplicate = malloc(strlen(str) + 1);
 	if (duplicate == NULL)
 		return (NULL);
 	strcpy(duplicate, str);
