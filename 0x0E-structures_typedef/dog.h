@@ -1,5 +1,7 @@
-/* File: dog.h */
+#ifndef DOG_H
+#define DOG_H
 
+/* File: dog.h */
 /**
  * struct dog - a new type struct dog with the following elements:
  * @name: name of the dog
@@ -14,3 +16,5 @@ struct dog
     float age;
     char *owner;
 };
+
+#endif
