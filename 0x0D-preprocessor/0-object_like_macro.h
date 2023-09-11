@@ -1,6 +1,6 @@
-#ifndef OBJECT_LIKE_MACRO_H /* check if the header file is already included */
-#define OBJECT_LIKE_MACRO_H /* define the header file name */
+#ifndef _0_OBJECT_LIKE_MACRO_H_
+#define _0_OBJECT_LIKE_MACRO_H_
 
-#define SIZE 1024 /* define the macro name and value */
+#define SIZE 1024
 
-#endif /* end of the header file */
+#endif /* _0_OBJECT_LIKE_MACRO_H_ */
