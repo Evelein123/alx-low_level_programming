@@ -2,8 +2,9 @@
 
 /**
  * sum_them_all - returns the sum of all its parameters.
- * @n: The number of arguments
- * Return: If n == 0, return 0. Otherwise, return the sum of all parameters.
+ * @n: number of arguments passed to the function
+ *
+ * Return: sum of all parameters
  */
 int sum_them_all(const unsigned int n, ...)
 {
