@@ -21,11 +21,31 @@ typedef struct list_s
 } list_t;
 
 int _putchar(char c);
-int _strlen(char *s);
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
 list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
+
+
+
+/**
+ * _strlen - Returns the length of a string.
+ * @s: The string to get the length of.
+ *
+ * Return: The length of @s.
+ */
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (*s++)
+		len++;
+
+	return (len);
+}
+
+
+
 
 #endif
