@@ -1,51 +1,20 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * add_node_end - Adds a new node at the end of a list_t list.
- * @head: A pointer to the head of the list_t list.
- * @str: The string to be added to the new node.
- *
- * Return: If memory allocation fails or head is NULL, return NULL.
- *         Otherwise, return the address of the new element.
+ * free_list - Frees a list_t list.
+ * @head: Pointer to the head of the list.
  */
-list_t *add_node_end(list_t **head, const char *str)
+void free_list(list_t *head)
 {
-	list_t *new_node = malloc(sizeof(list_t));
-	list_t *last = *head;
+	list_t *current, *next;
 
-	if (!new_node)
-		return (NULL);
-
-	new_node->str = strdup(str);
-	new_node->len = _strlen(str);
-	new_node->next = NULL;
-
-	if (!*head)
+	current = head;
+	while (current != NULL)
 	{
-		*head = new_node;
-		return (new_node);
+		next = current->next;
+		free(current->str);
+		free(current);
+		current = next;
 	}
-
-	while (last->next)
-		last = last->next;
-
-	last->next = new_node;
-
-	return (new_node);
-}
-
-/**
- * _strlen - Returns the length of a string.
- * @s: The string to get the length of.
- *
- * Return: The length of @s.
- */
-int _strlen(const char *s)
-{
-	int len = 0;
-
-	while (*s++)
-		len++;
-
-	return (len);
 }
