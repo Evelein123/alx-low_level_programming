@@ -5,8 +5,12 @@
 #include <unistd.h>
 
 /**
- * Function to display the ELF header information
- * @param header Pointer to the ELF header structure
+ * display_elf_header - Function to display the ELF header information
+ * @header: Pointer to the ELF header structure
+ *
+ * This function takes a pointer to an Elf64_Ehdr structure (header),
+ * which represents the ELF header.
+ * It prints the values of various fields in the ELF header.
  */
 void display_elf_header(Elf64_Ehdr *header)
 {
@@ -26,10 +30,15 @@ void display_elf_header(Elf64_Ehdr *header)
 }
 
 /**
- * Main function to read and display the ELF header of a file
- * @param argc Number of command-line arguments
- * @param argv Array of command-line argument strings
- * @return Returns 0 on success, or 98 for errors
+ * main - Main function to read and display the ELF header of a file
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line argument strings
+ *
+ * This function opens the ELF file specified by the user,reads the ELF header
+ * checks if it's an ELF file, and if so,
+ * calls display_elf_header to print the ELF header information.
+ *
+ * Return: Returns 0 on success, or 98 for errors
  */
 int main(int argc, char **argv)
 {
